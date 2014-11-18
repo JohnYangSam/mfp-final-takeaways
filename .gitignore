@@ -2,6 +2,7 @@
 *.mp3
 *.au
 assets/music/*
-bower_components
-node_modules
+# Comment out allows deployment on AFS
+#bower_components
+#node_modules
 psd
