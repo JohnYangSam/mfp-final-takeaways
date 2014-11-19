@@ -129,7 +129,7 @@ She claims sexism. You let her go anyways. You are not sexist!  Amidst a lawsuit
 
         <page approach-ceo>
             <h3>Courage Begets Vagueness</h3>
-            
+
             <p>You want feedback on your performance, and advice on methods to improve. The CEO gives you broad and non-actionable advice. What do you do?</p>
 
             <button choice ask-for-clarity>CLARITY! (Ask for clear and measurable metrics)</button>
@@ -172,7 +172,7 @@ She claims sexism. You let her go anyways. You are not sexist!  Amidst a lawsuit
 
             <p>Two weeks later he wants to chat again. He lets you go based on performance issues.</p>
 
-            <button reset>Play Again?</button>
+            <button restart>Play Again?</button>
 
         </page>
 
@@ -187,6 +187,209 @@ She claims sexism. You let her go anyways. You are not sexist!  Amidst a lawsuit
     </story>
 
     <story>
+        <h2>Acquisition of CloudAtlas</h2>
+
+        <page>
+            <h3>Choose Your Role</h3>
+
+            <p>Where will you make your dent from?</p>
+
+            <button choice investor>I am Mr./Ms. Money Bags! (Investor)</button>
+            <button choice founder>I like to start things! (Founder)</button>
+            <button choice employee>I'll ready to join a rocket ship. (Employee)</button>
+        </page>
+
+        <page investor>
+            <h3>Fund Returns</h3>
+
+            <p>As an investor in CloudAtlas, you believed that this company would be the billion-dollar unicorn that would help you return your fund. You know that CloudAtlas has been approached with a hundred-million-dollar acquisition. Are you close to returning your fund?</p>
+
+            <button choice close>Yes! We invested in Workday!</button>
+            <button choice far>Nope. We were a lead in Clinkle.</button>
+
+            <event is-investor></event>
+        </page>
+
+
+        <page founder>
+            <h3>Your mission</h3>
+
+            <p>As a co-founder of CloudAtlas, this company is your baby and you’ve been working on it tirelessly for the last few years. You’ve been approached with the offer of an acquisition, and you’re trying to decide whether or not to accept it. Do you see this company mission as a topic you want to work on for the rest of your life?</p>
+
+            <button choice yes-mission>I'm ready to give my baby up to new parents.</button>
+            <button choice no-mission>I'm still having child attachment!</button>
+
+            <event is-founder></event>
+        </page>
+
+        <page yes-mission>
+            <h3>Your Personal Balance Sheet?</h3>
+
+            <p>You may be able to scale your company’s impact but you suspect that your company’s mission will change quite a bit as a result of the acquisitions. While culture is important, financial considerations are as well. Are you financially stable with few obligations?</p>
+
+            <button choice stable-finances>I saved every dollar since the third grade!</button>
+            <button choice unstable-finances>I might have bought one too many Teslas recently?</button>
+
+            <event has-mission></event>
+        </page>
+
+        <page no-mission>
+            <h3>A New Mission?</h3>
+            <p>This is an opportunity for you to shift your company mission in the context of the larger firm. However, while culture is important, financial considerations are as well. Are you financially stable with few obligations?</p>
+
+            <button choice stable-finances>I saved every dollar since the third grade!</button>
+            <button choice unstable-finances>I might have bought one too many Teslas recently?</button>
+
+            <event has-no-mission></event>
+        </page>
+
+        <page stable-finances>
+            <h3>But It is My Baby!</h3>
+
+            <p>While this acquisition presents a healthy, multimillion payout for you, you feel passionately about the company mission and don’t really need the payout at the moment. In addition, you’re afraid you may not have as much control over the company mission post-acquisition. What do you decide?</p>
+
+            <button choice accept-acquisition>Sell! (Accept Acquisition)</button>
+            <button choice reject-acquisition>I am still a clingy parent! (Reject Acquisition)</button>
+
+            <event has-stable-finances></event>
+
+        </page>
+
+        <page unstable-finances>
+            <h3>Life vs. Control</h3>
+            <p>This acquisition presents a healthy, multimillion payout for you that would really help you with your family and mortgage, but you also feel passionately about the company mission and are afraid you may not have as much control over it post-acquisition. What do you decide?</p>
+
+            <button choice accept-acquisition>Sell! (Accept Acquisition)</button>
+            <button choice reject-acquisition>I am still a clingy parent! (Rejeact Acquisition)</button>
+
+            <event has-unstable-finances></event>
+        </page>
+
+        <page accept-acquisition>
+            <h3>Big Company Life</h3>
+            <p>You are now a VP who occasionally sees the CEO. You are now more than set financially, but your company mission has been limited, and many of your key employees have left.</p>
+
+            <button restart>Play Again?</button>
+        </page>
+
+        <page reject-acquisition>
+
+            <condition has-stable-finances>
+                <h3>ONWARDS!</h3>
+
+                <p>You now have the task of guiding your company through tough competition against large incumbents, but your employees are more gung-ho than ever about doing so!</p>
+
+                <button restart>Play Again?</button>
+            </condition>
+
+            <condition has-unstable-finances>
+                <h3>The Pressure is On</h3>
+
+                <p>You now have the task of guiding your company through tough competition against large incumbents, but your employees are more gung-ho than ever about doing so! You also have personal financial issues that linger on the back of your mind. These next few years will be hard for you.</p>
+
+                <button restart>Play Again?</button>
+            </condition>
+        </page>
+
+        <page employee>
+
+            <h3>Test</h3>
+
+            <p>As an employee of CloudAtlas, you joined because of your belief in the company mission. You know that the company has been approached with an offer of an acquisition, and the CEO has asked you to share your opinion on it. How strongly do you feel about your company’s culture?</p>
+
+            <button choice strongly>Strongly</button>
+            <button choice not-very>Not Very Strongly</button>
+
+            <event is-employee></event>
+        </page>
+
+        <page strongly>
+            <h3>How Early Were You?</h3>
+
+            <p>Despite having worked there for only three months, the company already feels like family, and you’re afraid the culture may change after the acquisition. While culture is important, financial considerations are as well. Are you an early employee or not?</p>
+
+            <button choice early>I was practically a founder!</button>
+            <button choice late>I only just got here.</button>
+
+            <event is-strongly></event>a
+
+        </page>
+
+        <page not-very>
+            <h3>Still Trying to Find a Home</h3>
+            <p>Despite having worked there for three months, the company still doesn’t quite feel like family and you are curious how the culture might change as a result of the acquisition. However, while culture is important, financial considerations are as well. Are you an early employee or not?</p>
+
+            <button choice early-nv>I was practically a founder!</button>
+            <button choice late-nv>I only just got here.</button>
+
+            <event is-not-very></event>
+
+        </page>
+
+        <page early-nv>
+            <h3>New Options?</h3>
+            <p>You’re now in a comfortable position financially and waiting for your investment period to end before deciding whether to stay or leave the new company.</p>
+
+            <button restart>Play Again?</button>
+        </page>
+
+        <page late-nv>
+            <h3>Still not quite right</h3>
+            <p>You’ve turned down millions of dollars for the mission of this company, but you still aren’t quite happy in your job and decide to either work hard to change the culture of the company or start looking for other potential opportunities.</p>
+
+            <button restart>Play Again?</button>
+        </page>
+
+        
+        <page early>
+            <h3>Millions?</h3>
+
+            <p>You will be getting a multimillion payout from the acquisition. However, you are still worried about the culture changes. What do you decide?</p>
+
+            <button choice employee-buyin>Let's see what the big leagues are like!</button>
+            <button choice no-employee-buyin>I want to double down!</button>
+        </page>
+
+        <page late>
+            <h3>Payouts and Culture</h3>
+
+            <p>You will be getting sub-million payout from the acquisition, and the very things that drew you to the company, the vision and culture, may be changing. What do you decide?</p>
+
+            <button choice employee-buyin-sm>Let's see what the big leagues are like!</button>
+            <button choice no-employee-buyin-sm>I want to double down!</button>
+
+        </page>
+
+        <page employee-buyin-sm>
+            <h3>How Long Will You Stay?</h3>
+            <p>You have a comfortable position within the larger organization, but you see both the culture and the mission of the company gradually changing and are starting to look for other options to fall back on.</p>
+
+            <button restart>Play Again?</button>
+        </page>
+
+
+        <page no-employee-buyin-sm>
+            <h3>Keep Going</h3>
+
+            <p>You decide to continue working hard on the mission and culture of CloudAtlas and hope that the company will weather the next few years and reach a multi-billion dollar exit.</p>
+
+            <button restart>Play Again?</button>
+        </page>
+
+
+        <page employee-buyin>
+            <h3>Money in the Bank. Does Culture Follow?</h3>
+            <p>You’re now waiting things out to see whether the culture changes negatively; if so, you have the financial stability to change job paths as you see fit.</p>
+
+            <button restart>Play Again?</button>
+        </page>
+
+        <page no-employee-buyin>
+            <h3>All in!</h3>
+            <p>You’ve decided to go all in on CloudAtlas and intend to continue working 80+ hour weeks to ensure this company’s (and your own) success.</p>
+
+            <button restart>Play Again?</button>
+        </page>
     </story>
 
 </body>
